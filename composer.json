@@ -1,0 +1,19 @@
+{
+    "name": "hubleto/php-api-client",
+    "description": "PHP client to access Hubleto's API",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hubleto\\PhpApiClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michal Barnas",
+            "email": "michal.barnas@wai.blue"
+        }
+    ]
+}
