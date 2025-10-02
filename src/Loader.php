@@ -53,9 +53,9 @@ class Loader
     return $this->guzzleClient->request($method, $this->hubletoEndpoint . '/api/call', [
       'body' => [
         'key' => $this->apiKey,
-        'app' => '',
-        'controller' => '',
-        'vars' => ''
+        'app' => $app,
+        'controller' => $controller,
+        'vars' => $vars
       ]
     ]);
   }
