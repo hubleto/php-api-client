@@ -4,7 +4,6 @@ require 'vendor/autoload.php';
 
 /**
  * Hubleto API Client for PHP
- * Author: Michal Barnas, michal.barnas@wai.blue
  * License: See LICENSE.md file in the root folder of the software package.
  */
 
