@@ -1,22 +1,20 @@
 <?php
 
-require 'vendor/autoload.php';
+namespace Hubleto\PhpApiClient;
 
 /**
  * Hubleto API Client for PHP
  * License: See LICENSE.md file in the root folder of the software package.
  */
 
-namespace Hubleto\PhpApiClient;
-
 use GuzzleHttp\Psr7\Request;
 
 class Loader
 {
 
-  public string $apiKey;              // Client access API key to be able to send and authenticate requests to Hubleto
-  public string $hubletoEndpoint;     // Hubleto instance endpoint
-  public object $guzzleClient;        // Guzzle HTTP client object
+  private string $apiKey;              // Client access API key to be able to send and authenticate requests to Hubleto
+  private string $hubletoEndpoint;     // Hubleto instance endpoint
+  private object $guzzleClient;        // Guzzle HTTP client object
 
   /**
    * Constructs a Hubleto PHP API client object
@@ -24,10 +22,10 @@ class Loader
    * @param mixed $config
    * @return void
    */
-  public function __construct(array $config)
+  public function __construct(string $apiKey, string $hubletoEndpoint)
   {
-    $this->apiKey = $config['api_key'];
-    $this->hubletoEndpoint = $config['hubleto_endpoint'];
+    $this->apiKey = $apiKey;
+    $this->hubletoEndpoint = $hubletoEndpoint;
     $this->guzzleClient = new \GuzzleHttp\Client([
       'base_uri' => rtrim($this->hubletoEndpoint, '/') . '/',
       'timeout'  => 30.0,
@@ -51,7 +49,7 @@ class Loader
   public function sendRequest(string $method, string $app, string $controller, array $vars = []): object
   {
     return $this->guzzleClient->request($method, $this->hubletoEndpoint . '/api/call', [
-      'body' => [
+      'form_params' => [
         'key' => $this->apiKey,
         'app' => $app,
         'controller' => $controller,

@@ -12,7 +12,8 @@
     },
     "authors": [
         {
-            "email": "admin@hubleto.com"
+            "email": "admin@hubleto.com",
+            "name": "Michal Barnas"
         }
     ]
 }
