@@ -12,13 +12,6 @@ A PHP API client for Hubleto, designed to simplify integration with Hubleto’s 
 - [API Reference](#api-reference)
 - [Contact](#contact)
 
-## Features
-
-- Simple and intuitive API for interacting with Hubleto
-- Supports GET and POST requests
-- Handles authentication and error responses
-- Extensible and easy to configure
-
 ## Installation
 
 Install via Composer:
