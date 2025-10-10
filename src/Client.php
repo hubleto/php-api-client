@@ -13,7 +13,7 @@ class Client
 
   private string $apiKey;              // Client access API key to be able to send and authenticate requests to Hubleto
   private string $hubletoEndpoint;     // Hubleto instance endpoint
-  private object $guzzleClient;        // Guzzle HTTP client object
+  private \GuzzleHttp\Client $guzzleClient;        // Guzzle HTTP client object
 
   /**
    * Constructs a Hubleto PHP API client object
